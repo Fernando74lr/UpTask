@@ -57,7 +57,12 @@
                         // Sí hay tareas.
                         foreach ($tareas as $tarea): ?>
                             <li id="tarea_<?php echo $tarea['id'] ?>" class="tarea">
-                            <p class="parrafo_<?php echo $tarea['id'] ?>"><?php echo $tarea['nombre'] ?></p>
+                            <p 
+                                class="parrafo_<?php echo $tarea['id'] ?>"
+                                style="<?php echo ($tarea['estado']) === '1' ? 'text-decoration:line-through;' : 'text-decoration:none;' ?>"
+                            >
+                                <?php echo $tarea['nombre'] ?>
+                            </p>
                                 <div class="acciones">
                                     <i class="far fa-check-circle <?php echo ($tarea['estado']) === '1' ? 'completo' : '' ?>"></i>
                                     <i class="fas fa-trash"></i>
